@@ -18,7 +18,8 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         <% else %>
-        <li><%= link_to "Log in", new_user_session_path, class: "nav navbar-nav navbar-right" %></li>
+        <li><%= link_to "Login", new_user_session_path, class: "nav navbar-nav navbar-right" %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, class: "nav navbar-nav navbar-right" %></li>
         <% end %>
         <!-- <li><a href="#">About</a></li> -->
 
