@@ -33,7 +33,6 @@
             <li><a href="#">My Activity</a></li>
             <li><a href="#">Manage My Inventory</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
             <% if user_signed_in? %>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% end %>
