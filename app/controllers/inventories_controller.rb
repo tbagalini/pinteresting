@@ -1,5 +1,7 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
   def index
     @inventories = Inventory.all
   end
@@ -38,6 +40,12 @@ class InventoriesController < ApplicationController
     def set_inventory
       @inventory = Inventory.find(params[:id])
     end
+
+  def correct_user
+    @inventory = current_user.Inventories.find_by(id: params[:id])
+    redirect_to inventories_path, notice: "you are unable to edit another companies inventory" if @inventory.nil?
+  end
+
     def inventory_params
       params.require(:inventory).permit(:description, :part_number, :alternate_part_number, :condition_code, :qty, :mfg_code, :serial_number, :part_comments, :price)
     end
