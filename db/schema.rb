@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703032508) do
+ActiveRecord::Schema.define(version: 20160706172328) do
+
+  create_table "inventories", force: :cascade do |t|
+    t.text     "description"
+    t.string   "part_number"
+    t.string   "alternate_part_number"
+    t.string   "condition_code"
+    t.integer  "qty"
+    t.string   "mfg_code"
+    t.string   "serial_number"
+    t.text     "part_comments"
+    t.decimal  "price"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @inventory.description %>
+</p>
+
+<p>
+  <strong>Part number:</strong>
+  <%= @inventory.part_number %>
+</p>
+
+<p>
+  <strong>Alternate part number:</strong>
+  <%= @inventory.alternate_part_number %>
+</p>
+
+<p>
+  <strong>Condition code:</strong>
+  <%= @inventory.condition_code %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @inventory.qty %>
+</p>
+
+<p>
+  <strong>Mfg code:</strong>
+  <%= @inventory.mfg_code %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @inventory.serial_number %>
+</p>
+
+<p>
+  <strong>Part comments:</strong>
+  <%= @inventory.part_comments %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @inventory.price %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  part_number: MyString
+  alternate_part_number: MyString
+  condition_code: MyString
+  qty: 1
+  mfg_code: MyString
+  serial_number: MyString
+  part_comments: MyText
+  price: 9.99
+
+two:
+  description: MyText
+  part_number: MyString
+  alternate_part_number: MyString
+  condition_code: MyString
+  qty: 1
+  mfg_code: MyString
+  serial_number: MyString
+  part_comments: MyText
+  price: 9.99
