@@ -5,15 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Description</th>
       <th>Part number</th>
       <th>Alternate part number</th>
-      <th>Condition code</th>
+      <th>Description</th>
       <th>Qty</th>
+      <th>Price</th>
+      <th>Condition code</th>
       <th>Mfg code</th>
       <th>Serial number</th>
       <th>Part comments</th>
-      <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,18 +21,18 @@
   <tbody>
     <% @inventories.each do |inventory| %>
       <tr>
-        <td><%= inventory.description %></td>
         <td><%= inventory.part_number %></td>
         <td><%= inventory.alternate_part_number %></td>
-        <td><%= inventory.condition_code %></td>
+        <td><%= inventory.description %></td>
         <td><%= inventory.qty %></td>
+        <td><%= inventory.price %></td>
+        <td><%= inventory.condition_code %></td>
         <td><%= inventory.mfg_code %></td>
         <td><%= inventory.serial_number %></td>
         <td><%= inventory.part_comments %></td>
-        <td><%= inventory.price %></td>
         <td><%= link_to 'Show', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

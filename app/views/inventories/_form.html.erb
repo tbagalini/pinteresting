@@ -12,28 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
     <%= f.label :part_number %>
     <%= f.text_field :part_number %>
   </div>
 
-  <div class="field">
+    <div class="field">
     <%= f.label :alternate_part_number %>
     <%= f.text_field :alternate_part_number %>
   </div>
 
   <div class="field">
-    <%= f.label :condition_code %>
-    <%= f.text_field :condition_code %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="field">
     <%= f.label :qty %>
     <%= f.number_field :qty %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :condition_code %>
+    <%= f.text_field :condition_code %>
   </div>
 
   <div class="field">
@@ -51,10 +56,6 @@
     <%= f.text_area :part_comments %>
   </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
 
   <div class="actions">
     <%= f.submit %>
