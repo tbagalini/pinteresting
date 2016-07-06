@@ -1,3 +1,8 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    <img src="http://s3-us-west-1.amazonaws.com/inventoryturbo/logonew1.png" width="300" height="50" class="img-responsive" alt="TurboLogo" />
 <%= form_for(inventory) do |f| %>
   <% if inventory.errors.any? %>
     <div id="error_explanation">
@@ -11,53 +16,53 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :part_number %>
-    <%= f.text_field :part_number %>
+    <%= f.text_field :part_number, class: "form-control" %>
   </div>
 
-    <div class="field">
+    <div class="form-group">
     <%= f.label :alternate_part_number %>
-    <%= f.text_field :alternate_part_number %>
+    <%= f.text_field :alternate_part_number, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :qty %>
-    <%= f.number_field :qty %>
+    <%= f.number_field :qty, class: "form-control" %>
   </div>
-  
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :condition_code %>
-    <%= f.text_field :condition_code %>
+    <%= f.text_field :condition_code, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :mfg_code %>
-    <%= f.text_field :mfg_code %>
+    <%= f.text_field :mfg_code, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :serial_number %>
-    <%= f.text_field :serial_number %>
+    <%= f.text_field :serial_number, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :part_comments %>
-    <%= f.text_area :part_comments %>
+    <%= f.text_area :part_comments, class: "form-control" %>
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
