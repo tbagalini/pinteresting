@@ -13,6 +13,7 @@
 <table>
   <thead>
     <tr>
+      <th>Company Name</th>
       <th>Part number</th>
       <th>Alternate part number</th>
       <th>Description</th>
@@ -29,6 +30,7 @@
   <tbody>
     <% @inventories.each do |inventory| %>
       <tr>
+        <td><%= inventory.user.company_name %></td>
         <td><%= inventory.part_number %></td>
         <td><%= inventory.alternate_part_number %></td>
         <td><%= inventory.description %></td>

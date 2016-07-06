@@ -7,13 +7,13 @@ class InventoriesController < ApplicationController
   end
 
   def new
-    @inventory = Inventory.new
+    @inventory = current_user.Inventories.build
   end
 
   def edit
   end
   def create
-    @inventory = Inventory.new(inventory_params)
+    @inventory = current_user.Inventories.build(inventory_params)
 
     if @inventory.save
       redirect_to @inventory, notice: 'Inventory was successfully created.'
@@ -41,4 +41,5 @@ class InventoriesController < ApplicationController
     def inventory_params
       params.require(:inventory).permit(:description, :part_number, :alternate_part_number, :condition_code, :qty, :mfg_code, :serial_number, :part_comments, :price)
     end
+
 end
