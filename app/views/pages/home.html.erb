@@ -1,8 +1,70 @@
 
 <div class="jumbotron center">
 		<img src="http://s3-us-west-1.amazonaws.com/inventoryturbo/logonew1.png" class="img-responsive center-block" width="500" height="200" alt="TurboLogo" />
-	<p>
-	 <%= render 'layouts/search' %>
-	</p>
+	<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    
 
+       
+<p id="notice"><%= notice %></p>
+
+
+<br>
+
+        <%= form_tag search_path, method: :get do %>
+             <div class="field">
+               
+               <%= text_field_tag :part_number, params[:part_number], placeholder: "enter part number" %>
+              <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+            </div>
+        <% end %>
+
+    <% unless @inventories.blank? %>
+    
 </div>
+</div> 
+         
+<table class="table table-hover">
+
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Part number</th>
+      <th>Alt</th>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Cond code</th>
+      <th>Part comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventories.each do |inventory| %>
+      <tr>
+        <td><%= inventory.user.company_name %> </td>
+        <td><%= inventory.part_number %></td>
+        <td><%= inventory.alternate_part_number %></td>
+        <td><%= inventory.description %></td>
+        <td><%= inventory.qty %></td>
+        <td><%= inventory.price %></td>
+        <td><%= inventory.condition_code %></td>
+        <td><%= inventory.part_comments %></td>
+        <td><%= link_to 'Details', inventory %></td>
+        <% if inventory.user == current_user %>
+        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+        <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+    
+<br>
+ 
+</div>
+
