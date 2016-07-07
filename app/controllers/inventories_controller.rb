@@ -1,12 +1,20 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :search]
+
   def index
     @inventories = Inventory.all
   end
+
   def show
   end
+
+  def search
+    if params[:part_number].present?
+        @inventories = Inventory.where("LOWER(part_number) like ?", "%%#{params[:part_number].downcase}%") if params[:part_number].present? 
+  end
+end
 
   def new
     @inventory = current_user.Inventories.build
@@ -14,6 +22,7 @@ class InventoriesController < ApplicationController
 
   def edit
   end
+
   def create
     @inventory = current_user.Inventories.build(inventory_params)
 
@@ -23,6 +32,7 @@ class InventoriesController < ApplicationController
       render :new
     end
   end
+  
   def update
     if @inventory.update(inventory_params)
       redirect_to @inventory, notice: 'Inventory was successfully updated.'
@@ -37,6 +47,7 @@ class InventoriesController < ApplicationController
   end
 
   private
+
     def set_inventory
       @inventory = Inventory.find(params[:id])
     end
@@ -49,5 +60,4 @@ class InventoriesController < ApplicationController
     def inventory_params
       params.require(:inventory).permit(:description, :part_number, :alternate_part_number, :condition_code, :qty, :mfg_code, :serial_number, :part_comments, :price)
     end
-
 end

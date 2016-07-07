@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :inventories
   devise_for :users, :controllers => { registrations: 'registrations' }
+  
 
   root "pages#home"
   get "about" => "pages#about"
-  get "search" => "pages#search"
+  get "search" => "inventories#search"
   get "import" => "pages#import"
 
 
