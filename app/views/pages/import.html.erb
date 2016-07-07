@@ -1,0 +1,34 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+    <img src="http://s3-us-west-1.amazonaws.com/inventoryturbo/logonew1.png" width="300" height="50" class="img-responsive" alt="TurboLogo" />
+
+<h2>Add Inventory</h2>
+</div>
+</div>
+
+<div class="panel-body">
+ <br>
+ <h3>csv upload</h3>
+
+<p> chose a csv file to upload, required columns ajsfjh, lahfdh, ladfkdf *colums must be in order </p>
+
+<%= form_tag import_path, multipart: true do %>
+
+<div class="actions">
+  <%= file_field_tag :file %>
+  <br>
+  <input class="btn btn-primary" type="submit" value="Submit">
+  </div>
+ <br>
+  <br>
+  <h3>manually add a single part</h3>
+  
+  <a class="btn btn-primary" href="inventories/new" role="button">add a part</a>
+  </div>
+  <br>
+<% end %>
+  <div class="panel-footer">
+ <%= link_to "Back", :back %>
+</div>

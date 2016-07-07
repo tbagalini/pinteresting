@@ -29,14 +29,16 @@
         <!-- <li><a href="#">About</a></li> -->
 
         <% if user_signed_in? %>
+
+        
+      </form>
           
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
           <% end %>
           <ul class="dropdown-menu">
             <li><%= link_to "My Profile", edit_user_registration_path %></li>
-            <li><%= link_to "Add Inventory", new_inventory_path %></li>
-            <li><a href="#">My Activity</a></li>
+            <li><%= link_to "Add Inventory", import_path %></li>
             <li><a href="#">Manage My Inventory</a></li>
             <li role="separator" class="divider"></li>
             <% if user_signed_in? %>
