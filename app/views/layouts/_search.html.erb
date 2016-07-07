@@ -1,8 +1,10 @@
 <form class="form-inline">
   <div class="form-group">
     <div class="input-group">
-      <input type="text" class="form-control" id="search" placeholder="search">
+      <input type="text" class="form-control" id="search_value" placeholder="search">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">submit</button>
 </form>
+
+<%= link_to "New Task", new_task_path(:order_id=> @order.id) %>
