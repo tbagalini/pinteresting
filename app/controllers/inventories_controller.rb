@@ -4,7 +4,7 @@ class InventoriesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :search]
 
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.all.order("created_at DESC")
   end
 
   def show
@@ -12,7 +12,7 @@ class InventoriesController < ApplicationController
 
   def search
     if params[:part_number].present?
-        @inventories = Inventory.where("LOWER(part_number) like ?", "%%#{params[:part_number].downcase}%") if params[:part_number].present? 
+        @inventories = Inventory.order("created_at DESC").where("LOWER(part_number) like ?", "%%#{params[:part_number].downcase}%") if params[:part_number].present? 
   end
 end
 

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706202439) do
+ActiveRecord::Schema.define(version: 20160708190725) do
+
+  create_table "companies", force: :cascade do |t|
+    t.text     "company_name"
+    t.string   "company_street_number"
+    t.string   "company_street_address"
+    t.string   "company_street_address_2"
+    t.string   "company_state"
+    t.string   "company_zip"
+    t.string   "company_phone"
+    t.string   "company_sales_phone"
+    t.string   "company_sales_email"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.text     "description"
