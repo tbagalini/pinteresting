@@ -14,15 +14,16 @@
 
 <p> chose a csv file to upload, required columns ajsfjh, lahfdh, ladfkdf *colums must be in order </p>
 
-<%= form_tag import_path, multipart: true do %>
+<%= form_tag import_inventories_path, multipart: true do %>
 
 <div class="actions">
   <%= file_field_tag :file %>
   <br>
-  <input class="btn btn-primary" type="submit" value="Submit">
+  <%= submit_tag "Import" %>
   </div>
  <br>
-  <br>
+ <hr>
+  
   <h3>manually add a single part</h3>
   
   <a class="btn btn-primary" href="inventories/new" role="button">add a part</a>
