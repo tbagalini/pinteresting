@@ -8,6 +8,30 @@
 </div>
 </div>
 <br>
+
+
+<p>
+  <strong>Company Contact:</strong>
+</p>
+
+<p>
+  <%= @inventory.user.company_name if @inventory.user.company_name  %>
+</p>
+
+<p>
+  <%= @inventory.user.company_comment if @inventory.user.company_comment  %>
+</p>
+
+<p>
+  <%= @inventory.user.company_sales_email if @inventory.user.company_sales_email  %>
+</p>
+
+<p>
+  <%= @inventory.user.company_sales_phone if @inventory.user.company_sales_phone  %>
+</p>
+
+<hr>
+
 <p>
   <strong>Part number:</strong>
   <%= @inventory.part_number %>

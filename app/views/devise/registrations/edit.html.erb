@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <div class="panel-title">
     <img src="http://d3fwmhwfh9c00r.cloudfront.net/logonew1.png" width="300" height="50" class="img-responsive" alt="TurboLogo" />
-      <h3>Edit <%= resource_name.to_s.humanize %></h3>
+      <h3>Edit Profile</h3>
     </div>
   </div>
   <div class="panel-body">
@@ -15,17 +15,72 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :company_comment %> <i> (tag line /details to be displayed on parts for RFQ)</i>
+        <%= f.text_field :company_comment, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_street_number %>
+        <%= f.text_field :company_street_number, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_street_address %>
+        <%= f.text_field :company_street_address, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_state %>
+        <%= f.text_field :company_state, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_zip %>
+        <%= f.text_field :company_zip, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :company_phone %>
+        <%= f.text_field :company_phone, class: "form-control", :autofocus => true, required: true %>
+      </div>
+<br>
+      <hr>
+
+      <div class="form-group">
+        <%= f.label :company_sales_phone %> <i> (number to be displayed on parts for RFQ)</i>
+        <%= f.text_field :company_sales_phone, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_sales_email %> <i> (email to be displayed on parts for RFQ)</i>
+        <%= f.email_field :company_sales_email, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+<br>
+      <hr>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", :autofocus => true, required: true %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control", :autofocus => true %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.label :password %> <i> (leave blank if you don't want to change it)</i>
         <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
       </div>
-
+      <br>
+<hr>
       <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.label :current_password %> <i> (enter your current password to confirm your changes)</i>
         <%= f.password_field :current_password, class: "form-control" %>
       </div>
 
