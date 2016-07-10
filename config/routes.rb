@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :companies
   resources :inventories do
-  collection { post :import}
+  collection do
+  	post :import
+  end
 end
   devise_for :users, :controllers => { registrations: 'registrations' }
   

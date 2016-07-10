@@ -8,11 +8,9 @@ class InventoriesController < ApplicationController
   end
 
   def import
-  Inventory.import(params[:file])
-  redirect_to root_url, notice: "Inventory imported."
+    Inventory.import(params[:file])
+    redirect_to root_url, notice: 'Inventory imported.'
   end
-  
-
 
   def show
   end

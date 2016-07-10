@@ -15,11 +15,9 @@
 <p> chose a csv file to upload, required columns ajsfjh, lahfdh, ladfkdf *colums must be in order </p>
 
 <%= form_tag import_inventories_path, multipart: true do %>
-
-<div class="actions">
   <%= file_field_tag :file %>
-  <br>
   <%= submit_tag "Import" %>
+
   </div>
  <br>
  <hr>
