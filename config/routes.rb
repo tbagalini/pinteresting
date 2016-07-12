@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :companies
   resources :inventories do
-  collection do
-  	post :import
-  end
+  	collection { post :import }
 end
+
+ 
   devise_for :users, :controllers => { registrations: 'registrations' }
   
 
@@ -16,5 +16,6 @@ end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
 
 

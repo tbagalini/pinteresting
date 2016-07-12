@@ -1,23 +1,24 @@
 class Inventory < ApplicationRecord
 	belongs_to :user
-end
 
 def self.import(file)
-  spreadsheet = Roo::Spreadsheet.open(file.path)
+  allowed_attributes = [ "user_id", "id","description","part_number","price","created_at","updated_at", "alternate_part_number", "condition_code", "qty", "mfg_code", "serial_number", "part_comments"]
+  spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)
   (2..spreadsheet.last_row).each do |i|
     row = Hash[[header, spreadsheet.row(i)].transpose]
-    inventory = find_by(id: row["id"]) || new
-    iventory.attributes = row.to_hash
-    iventory.save!
+    inventory = find_by_id(row["id"]) || new
+    inventory.attributes = row.to_hash.select { |k,v| allowed_attributes.include? k }
+    inventory.save!
   end
 end
 
 def self.open_spreadsheet(file)
   case File.extname(file.original_filename)
-  when ".csv" then Roo::CSV.new(file.path, nil, :ignore)
-  when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
-  when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
+  when ".csv" then Roo::CSV.new(file.path)
+  when ".xls" then Excel.new(file.path, nil, :ignore)
+  when ".xlsx" then Excelx.new(file.path, nil, :ignore)
   else raise "Unknown file type: #{file.original_filename}"
   end
+end
 end

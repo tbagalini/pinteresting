@@ -7,11 +7,6 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all.order("created_at DESC")
   end
 
-  def import
-    Inventory.import(params[:file])
-    redirect_to root_url, notice: 'Inventory imported.'
-  end
-
   def show
   end
 
@@ -49,6 +44,11 @@ end
   def destroy
     @inventory.destroy
     redirect_to inventories_url, notice: 'Inventory was successfully destroyed.'
+  end
+
+  def import
+    Inventory.import(params[:file])
+    redirect_to root_url, notice: "Inventory imported."
   end
 
   private
