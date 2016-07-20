@@ -16,9 +16,10 @@
 
 <%= form_tag import_inventories_path, multipart: true do %>
   <%= file_field_tag :file %>
+  <br>
   <%= submit_tag "Import", name: nil, class: "btn btn-primary" %>
 
-  </div>
+  
  <br>
  <hr>
   
