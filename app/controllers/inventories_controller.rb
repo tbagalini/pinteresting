@@ -25,6 +25,7 @@ end
 
   def create
     @inventory = current_user.Inventories.build(inventory_params)
+    @inventory.user_id = current_user.id
 
     if @inventory.save
       redirect_to @inventory, notice: 'Inventory was successfully created.'
@@ -47,7 +48,7 @@ end
   end
 
   def import
-    Inventory.import(params[:file])
+    Inventory.import(params[:file], current_user.id)
     redirect_to root_url, notice: "Inventory imported."
   end
 

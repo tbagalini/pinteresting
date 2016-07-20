@@ -1,7 +1,7 @@
 class Inventory < ApplicationRecord
 	belongs_to :user
 
-def self.import(file)
+def self.import(file, user_id)
   allowed_attributes = [ "user_id", "id","description","part_number","price","created_at","updated_at", "alternate_part_number", "condition_code", "qty", "mfg_code", "serial_number", "part_comments"]
   spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)
@@ -9,6 +9,7 @@ def self.import(file)
     row = Hash[[header, spreadsheet.row(i)].transpose]
     inventory = find_by_id(row["id"]) || new
     inventory.attributes = row.to_hash.select { |k,v| allowed_attributes.include? k }
+    inventory.user_id = user_id
     inventory.save!
   end
 end
