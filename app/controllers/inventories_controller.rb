@@ -44,7 +44,7 @@ end
 
   def destroy
     @inventory.destroy
-    redirect_to inventories_url, notice: 'Inventory was successfully destroyed.'
+    redirect_to search_path, notice: 'Inventory was successfully destroyed.'
   end
 
   def import
