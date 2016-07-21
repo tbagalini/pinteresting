@@ -12,6 +12,7 @@ end
   get "about" => "pages#about"
   get "search" => "inventories#search"
   get "import" => "pages#import"
+  get "import" => "pages#soon"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
