@@ -81,7 +81,6 @@
 
 <br>
   <div class="panel-footer">
- <%= link_to "Back", :back %> | <%= link_to 'Edit', edit_inventory_path(@inventory) %> 
- <a class="btn btn-primary" href=/ role="button">home</a>
- 
+ <%= link_to '<i class="glyphicon glyphicon-arrow-left"></i>'.html_safe, :back , class: 'btn btn-default' %>   <%=  link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_inventory_path(@inventory), class: 'btn btn-default' %>  <%= link_to '<i class="glyphicon glyphicon-search"></i>'.html_safe, search_path , class: 'btn btn-default' %>
+
 </div>
