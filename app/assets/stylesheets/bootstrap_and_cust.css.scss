@@ -8,3 +8,7 @@ $body-bg:   #bdc3c7;
 .table-hover > tbody > tr:hover {
   background-color: #D2D2D2;
 }
+
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");

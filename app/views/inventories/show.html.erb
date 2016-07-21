@@ -15,7 +15,7 @@
 </p>
 
 <p>
-  <%= @inventory.user.company_name if @inventory.user.company_name  %>
+  <h3><%= @inventory.user.company_name if @inventory.user.company_name  %></h3>
 </p>
 
 <p>
@@ -81,5 +81,7 @@
 
 <br>
   <div class="panel-footer">
- <%= link_to "Back", :back %> | <%= link_to 'Edit', edit_inventory_path(@inventory) %> | <%= link_to "Search", search_path %>
+ <%= link_to "Back", :back %> | <%= link_to 'Edit', edit_inventory_path(@inventory) %> 
+ <a class="btn btn-primary" href=/ role="button">home</a>
+ 
 </div>

@@ -42,7 +42,7 @@
         <td><%= inventory.part_comments %></td>
         <td><%= link_to 'Details', inventory %></td>
         <% if inventory.user == current_user %>
-        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+        <td><a class="input-group-addon" href=edit_inventory_path(inventory)><span class="glyphicon glyphicon-pencil"></span></a></td>
         <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>

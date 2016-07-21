@@ -51,10 +51,10 @@
         <td><%= inventory.price %></td>
         <td><%= inventory.condition_code %></td>
         <td><%= inventory.part_comments %></td>
-        <td><%= link_to 'Details', inventory %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-info-sign"></i>'.html_safe, inventory, class: 'btn btn-default' %></td>
         <% if inventory.user == current_user %>
-        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-        <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_inventory_path(inventory), class: 'btn btn-default' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
         <% end %>
       </tr>
     <% end %>
