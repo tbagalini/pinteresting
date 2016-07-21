@@ -3,6 +3,7 @@
     <div class="panel-title">
     <img src="http://d3fwmhwfh9c00r.cloudfront.net/logonew1.png" width="300" height="50" class="img-responsive" alt="TurboLogo" />
 
+    
 
 <h1>Inventory</h1>
 
@@ -13,7 +14,7 @@
                
                <%= text_field_tag :part_number, params[:part_number], placeholder: "enter part number" %>
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-              <%= link_to 'Clear', search_path, class: 'btn btn-danger' %>
+              
             </div>
         <% end %>
 
@@ -49,10 +50,10 @@
         <td><%= inventory.price %></td>
         <td><%= inventory.condition_code %></td>
         <td><%= inventory.part_comments %></td>
-        <td><%= link_to '<i class="glyphicon glyphicon-info-sign"></i>'.html_safe, inventory, class: 'btn btn-default' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-info-sign"></i>'.html_safe, inventory, class: 'btn btn-primary' %></td>
         <% if inventory.user == current_user %>
-        <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_inventory_path(inventory), class: 'btn btn-default' %></td>
-        <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_inventory_path(inventory), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
