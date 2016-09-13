@@ -14,6 +14,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'devise', '~>4.2.0'
 gem 'roo', '~> 2.4.0'
+gem 'resque'
+gem 'resque-web', require: 'resque_web'
+gem 'sinatra', github: 'sinatra'
+
 
 group :development, :test do
 	gem 'sqlite3'
