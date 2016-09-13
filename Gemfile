@@ -17,7 +17,7 @@ gem 'roo', '~> 2.4.0'
 gem 'resque'
 gem 'resque-web', require: 'resque_web'
 gem 'sinatra', github: 'sinatra'
-gem 'redis'
+
 
 
 group :development, :test do
