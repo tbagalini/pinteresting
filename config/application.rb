@@ -15,5 +15,12 @@ module InventoryTurbo
     # -- all .rb files in that directory are automatically loaded.
  config.assets.initialize_on_precompile = false
  config.serve_static_assets = true
+
+ config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",") # or whatever else you would like to allow
+}
+
   end
 end
+

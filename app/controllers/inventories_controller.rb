@@ -28,7 +28,7 @@ end
     @inventory.user_id = current_user.id
 
     if @inventory.save
-      redirect_to @inventory, notice: 'Inventory was successfully created.'
+      redirect_to root_url, notice: 'Inventory was successfully created.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ end
   
   def update
     if @inventory.update(inventory_params)
-      redirect_to @inventory, notice: 'Inventory was successfully updated.'
+      redirect_to root_url, notice: 'Inventory was successfully updated.'
     else
       render :edit
     end
@@ -48,7 +48,7 @@ end
   end
 
   def import
-    Resque.enqueue(Inventorycsvimport, params[:file], user_id: current_user.id)
+    Resque.enqueue(Inventorycsvimport, file: params[:file], user_id: current_user.id)
     redirect_to root_url, notice: "Inventory import job started."
   end
 
