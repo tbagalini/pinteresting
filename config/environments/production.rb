@@ -75,6 +75,11 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+   config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'http://www.inventoryturbo.com',
+    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",") # or whatever else you would like to allow
+}
+
   config.action_controller.asset_host = "d13w5ndaruk327.cloudfront.net"
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
@@ -86,4 +91,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { host: 'inventoryturbo.com'}
+
+
 end
