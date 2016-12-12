@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'all_turbo_users/index'
+
   devise_for :admins
   resources :companies
   resources :inventories do
