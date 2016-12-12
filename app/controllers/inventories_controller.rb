@@ -13,8 +13,8 @@ class InventoriesController < ApplicationController
   def search
     if params[:part_number].present?
         @inventories = Inventory.order("created_at DESC").where("LOWER(part_number) like ?", "%%#{params[:part_number].downcase}%") if params[:part_number].present? 
+    end
   end
-end
 
   def new
     @inventory = current_user.Inventories.build
