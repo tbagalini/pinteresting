@@ -48,7 +48,7 @@ class InventoriesController < ApplicationController
   end
 
   def import
-    Resque.enqueue(Inventorycsvimport, file: params[:file], user_id: current_user.id)
+    Resque.enqueue(Inventorycsvimport, file: params[:file], user_id: current_user.id, @inventory.id)
     redirect_to root_url, notice: "Inventory import job started."
   end
 
